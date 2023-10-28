@@ -1,8 +1,8 @@
 # Ravi's Online Portfolio
 
-[![GitHub stars](https://img.shields.io/github/stars/YourGitHubUsername/YourPortfolioRepo?style=social)](https://github.com/YourGitHubUsername/YourPortfolioRepo/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/YourGitHubUsername/YourPortfolioRepo?style=social)](https://github.com/YourGitHubUsername/YourPortfolioRepo/network)
-[![GitHub license](https://img.shields.io/github/license/YourGitHubUsername/YourPortfolioRepo)](https://github.com/YourGitHubUsername/YourPortfolioRepo)
+[![GitHub stars](https://img.shields.io/github/stars/rsjoshi2912/portfolio?style=social)](https://github.com/rsjoshi2912/portfolio/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/rsjoshi2912/portfolio?style=social)](https://github.com/rsjoshi2912/portfolio/network)
+[![GitHub license](https://img.shields.io/github/license/rsjoshi2912/portfolio)](https://github.com/rsjoshi2912/portfolio/)
 
 Welcome to my online portfolio! Here, you'll find a collection of my work, projects, and a glimpse into my skills and interests.
 
@@ -35,6 +35,7 @@ Feel free to reach out to me at [ravishankerjoshi20@gmail.com](mailto:ravishanke
 
 Connect with me on social media:
 - [LinkedIn](https://in.linkedin.com/in/ravi-shanker-joshi)
+
 
 Thank you for visiting my portfolio! 😄
 
