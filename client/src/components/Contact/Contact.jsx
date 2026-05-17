@@ -58,14 +58,7 @@ export default function Contact() {
             <span className={styles.cardIcon}>💼</span>
             <div>
               <span className={styles.cardSub}>Connect on</span>
-              <span className={styles.cardMain}>LinkedIn</span>
-            </div>
-          </a>
-          <a href={`tel:${meta.phone}`} className={styles.card}>
-            <span className={styles.cardIcon}>📱</span>
-            <div>
-              <span className={styles.cardSub}>Call me at</span>
-              <span className={styles.cardMain}>{meta.phone}</span>
+              <span className={styles.cardMain}>linkedin.com/in/ravi-shanker-joshi</span>
             </div>
           </a>
         </div>

@@ -2,8 +2,7 @@ export const meta = {
   name: 'Ravi Joshi',
   title: 'Senior Full-Stack Developer & AEM Specialist',
   location: 'Bengaluru, India',
-  email: 'rsjoshi2912@gmail.com',
-  phone: '+91-9509333299',
+  email: 'ravishankerjoshi20@gmail.com',
   linkedin: 'https://linkedin.com/in/ravi-shanker-joshi',
   available: true,
 }
