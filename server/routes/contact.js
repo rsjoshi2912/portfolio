@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const nodemailer = require('nodemailer')
+const { Resend } = require('resend')
 const { visitorConfirmation, ownerNotification } = require('../emails/templates')
 
 const router = express.Router()
@@ -13,18 +13,8 @@ const msgSchema = new mongoose.Schema({
 })
 const Message = mongoose.model('Message', msgSchema)
 
-function makeTransport() {
-  const user = process.env.GMAIL_USER
-  const pass = process.env.GMAIL_APP_PASS
-  if (!user || !pass) return null
-
-  return nodemailer.createTransport({
-    service: 'gmail',
-    auth: { user, pass },
-  })
-}
-
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const OWNER = 'ravishankerjoshi20@gmail.com'
 
 router.post('/', async (req, res) => {
   try {
@@ -37,27 +27,27 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'Invalid email address.' })
     }
 
-    const doc = new Message({ name: name.trim(), email: email.trim(), message: message.trim() })
-    await doc.save()
+    const n = name.trim(), e = email.trim(), m = message.trim()
 
-    const transport = makeTransport()
-    if (transport) {
-      const owner = process.env.GMAIL_USER
+    await new Message({ name: n, email: e, message: m }).save()
+
+    if (process.env.RESEND_API_KEY) {
+      const resend = new Resend(process.env.RESEND_API_KEY)
 
       await Promise.all([
-        transport.sendMail({
-          from: `"Ravi Joshi · Portfolio" <${owner}>`,
-          to: email.trim(),
-          replyTo: owner,
-          subject: `Got your message, ${name.trim()}! — Ravi Joshi`,
-          html: visitorConfirmation({ name: name.trim(), message: message.trim() }),
+        resend.emails.send({
+          from: 'Ravi Joshi <onboarding@resend.dev>',
+          to: [e],
+          replyTo: OWNER,
+          subject: `Got your message, ${n}! — Ravi Joshi`,
+          html: visitorConfirmation({ name: n, message: m }),
         }),
-        transport.sendMail({
-          from: `"Portfolio Contact Form" <${owner}>`,
-          to: owner,
-          replyTo: email.trim(),
-          subject: `📬 New enquiry from ${name.trim()} via ravi.dev`,
-          html: ownerNotification({ name: name.trim(), email: email.trim(), message: message.trim() }),
+        resend.emails.send({
+          from: 'Portfolio Form <onboarding@resend.dev>',
+          to: [OWNER],
+          replyTo: e,
+          subject: `📬 New enquiry from ${n} via ravi.dev`,
+          html: ownerNotification({ name: n, email: e, message: m }),
         }),
       ])
     }
