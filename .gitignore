@@ -1,6 +1,10 @@
 node_modules/
 dist/
+
+# Environment files — never commit real secrets
 .env
-.env.local
+.env.*
+!.env.example
+
 .DS_Store
 *.log
