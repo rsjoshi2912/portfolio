@@ -1,5 +1,11 @@
 import { useEffect, useRef } from 'react'
-import styles from './Hero.module.css'
+
+const canvasStyle = {
+  position: 'absolute',
+  inset: 0,
+  zIndex: 0,
+  pointerEvents: 'none',
+}
 
 export default function ParticleCanvas() {
   const canvasRef = useRef(null)
@@ -67,5 +73,5 @@ export default function ParticleCanvas() {
     }
   }, [])
 
-  return <canvas ref={canvasRef} className={styles.canvas} />
+  return <canvas ref={canvasRef} style={canvasStyle} />
 }

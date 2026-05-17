@@ -1,6 +1,6 @@
 export const meta = {
   name: 'Ravi Joshi',
-  title: 'Senior Full-Stack Developer & AEM Specialist',
+  title: 'Full Stack Platform Engineer · AEM Specialist · 3× Adobe Certified',
   location: 'Bengaluru, India',
   email: 'ravishankerjoshi20@gmail.com',
   linkedin: 'https://linkedin.com/in/ravi-shanker-joshi',
@@ -18,7 +18,7 @@ export const heroRoles = [
 ]
 
 export const heroStats = [
-  { number: '6+', label: 'Years Experience' },
+  { number: '7+', label: 'Years Experience' },
   { number: '4', label: 'Top Companies' },
   { number: '10+', label: 'Enterprise Projects' },
   { number: '60+', label: 'Awards Received' },
@@ -26,16 +26,16 @@ export const heroStats = [
 
 export const aboutDesc = [
   {
-    text: "I'm a Full-Stack Software Engineer with deep expertise in enterprise content platforms and modern web development. My career spans building high-traffic consumer websites to complex cloud migration systems.",
-    highlight: ['Full-Stack Software Engineer'],
+    text: "I'm a Full Stack Platform Engineer with 7+ years of deep expertise in enterprise content platforms and modern web development. My career spans building high-traffic consumer websites to complex cloud migration systems.",
+    highlight: ['Full Stack Platform Engineer'],
   },
   {
-    text: 'My specialization in Adobe Experience Manager (AEM) — from Sites and Assets to AEM as a Cloud Service and AEM Guides — gives me a unique content-platform anchor, while my MERN stack expertise and AI-assisted development skills keep me at the cutting edge.',
+    text: 'My specialization in Adobe Experience Manager (AEM) — from Sites and Assets to AEM as a Cloud Service and AEM Guides — gives me a unique content-platform anchor, while my React/Spring Boot stack and AI-assisted development skills keep me at the cutting edge.',
     highlight: ['Adobe Experience Manager (AEM)', 'AI-assisted development'],
   },
   {
-    text: "I've delivered solutions for LinkedIn, Visa, Kellogg's, Blue Shield of California, and Royal Caribbean, owning full cycles from architecture through production release.",
-    highlight: ['LinkedIn, Visa, Kellogg\'s, Blue Shield of California', 'Royal Caribbean'],
+    text: "I've delivered enterprise solutions at Hashout Technologies, Visa, Accenture, and Mindtree — owning full cycles from architecture through production release.",
+    highlight: ['Hashout Technologies, Visa, Accenture, and Mindtree'],
   },
 ]
 
@@ -171,16 +171,16 @@ export const experience = [
     period: 'Aug 2024 – Present',
     projects: [
       {
-        name: 'LinkedIn — AEM Guides Solutioning · Mar 2025 – Present',
+        name: 'AEM Guides Publishing Platform · Mar 2025 – Present',
         bullets: [
-          'Leading end-to-end development of a structured authoring & publishing solution on AEM Guides, modernizing LinkedIn’s DITA-based content lifecycle.',
+          "Leading end-to-end development of a structured authoring & publishing solution on AEM Guides, modernizing the client's DITA-based content lifecycle.",
           'Designed and built a custom AEM translation connector automating content export, vendor handoff, and re-import across multilingual content sets.',
           'Configured folder profiles, DITA-OT pipelines, and PDF/JSON output presets supporting large authoring teams and downstream consumers.',
           'Developed extensible AEM components, Sling Models, and workflows for review tasks and publishing pipelines.',
         ],
       },
       {
-        name: 'Cloud Software Group (CSG) — Platform Enablement · Mar 2025 – Present',
+        name: 'Enterprise CRM & Platform Enablement · Mar 2025 – Present',
         bullets: [
           'Led CRM migration (Salesforce → Oracle Fusion); refactored Java, Python, and JavaScript codebases while preserving all business logic.',
           'Designed a Python-based ingestion service loading Oracle Fusion data into Azure Cognitive Search, powering the Citrix Partner Locator.',
@@ -189,9 +189,9 @@ export const experience = [
         ],
       },
       {
-        name: 'Software Downloads Portal Migration (CSG) · Aug 2024 – Mar 2025',
+        name: 'Software Downloads Portal Migration · Aug 2024 – Mar 2025',
         bullets: [
-          'Migrated tibco.com/downloads, spotfire.com/downloads, and others to AEM 6.5.23 on Adobe Cloud Manager.',
+          'Migrated multiple enterprise software download portals to AEM 6.5.23 on Adobe Cloud Manager.',
           'Architected a PIM → AEM import pipeline that programmatically creates Content Fragments for headless / CaaS consumption.',
           'Implemented PingFederate SSO, user management (CUGs), replication agents, and dispatcher configuration.',
         ],
@@ -220,7 +220,7 @@ export const experience = [
     period: 'Sep 2021 – May 2023',
     projects: [
       {
-        name: 'Blue Shield of California · Jun 2022 – May 2023',
+        name: 'Healthcare Insurance Portal · Jun 2022 – May 2023',
         bullets: [
           'Delivered full AEM migration; built custom components, Sling Models, Servlets, and OSGi services.',
           'Implemented translation workflows, AEM search indexes, and flexible multi-layout form components.',
@@ -229,9 +229,9 @@ export const experience = [
         ],
       },
       {
-        name: 'Royal Caribbean Group · Sep 2021 – Jun 2022',
+        name: 'Travel & Cruise Web Platform · Sep 2021 – Jun 2022',
         bullets: [
-          'Enhanced royalcaribbean.com on AEM 6.5: Sling Models, OSGi services, editable templates, and Adobe Launch integration.',
+          'Enhanced client\'s travel portal on AEM 6.5: Sling Models, OSGi services, editable templates, and Adobe Launch integration.',
           'Contributed to Adobe Dynamic Media and front-end UI enhancements using JavaScript and jQuery.',
         ],
       },
@@ -243,7 +243,7 @@ export const experience = [
     period: 'Jan 2019 – Sep 2021',
     projects: [
       {
-        name: "Kellogg's — Site Migration & E-Commerce · Feb 2021 – Sep 2021",
+        name: 'FMCG Site Migration & E-Commerce · Feb 2021 – Sep 2021',
         bullets: [
           'Led AEM 6.1 → 6.5 migration; built components, editable templates, Sling Models, and OSGi configurations.',
           'Designed and optimized checkout flow and cart logic for end-to-end ordering.',
@@ -251,7 +251,7 @@ export const experience = [
         ],
       },
       {
-        name: "Kellogg's — K.COM Consolidation & Project Engage · Jun 2019 – Feb 2021",
+        name: 'Global Web Consolidation & Engagement · Jun 2019 – Feb 2021',
         bullets: [
           'Built OSGi modules for global, recipe, and video search; integrated YouTube APIs and rich media.',
           'Scaled multi-brand AEM architecture to rapidly onboard new sites; automated PIM validation for data quality.',
@@ -261,6 +261,44 @@ export const experience = [
     ],
   },
 ]
+
+export const certifications = {
+  featured: {
+    tier: 'Adobe Certified Expert',
+    name: 'AEM Sites Developer',
+    issued: 'March 2026',
+    expires: 'March 2028',
+    badgeImg: '/portfolio/assets/adobe-ace-badge.png',
+    pdfUrl: '/portfolio/assets/sites-certification.pdf',
+    verifyUrl: 'https://certification.adobe.com/credential/verify/8d822fd4-15e0-11f1-be16-42010a400fe2',
+  },
+  others: [
+    {
+      tier: 'Adobe Professional',
+      name: 'AEM Front-End Developer',
+      issued: 'Jan 2020',
+      color: '#ff0000',
+    },
+    {
+      tier: 'Adobe Qualified',
+      name: 'Adobe Experience Platform',
+      issued: 'Jan 2021',
+      color: '#ff0000',
+    },
+    {
+      tier: 'HackerRank',
+      name: 'Java',
+      issued: 'Dec 2020',
+      color: '#00ea64',
+    },
+    {
+      tier: 'HackerRank',
+      name: 'JavaScript',
+      issued: 'Dec 2020',
+      color: '#00ea64',
+    },
+  ],
+}
 
 export const education = {
   icon: '🎓',
@@ -273,7 +311,7 @@ export const awards = [
   {
     emoji: '🌟',
     company: 'Hashout Technologies',
-    desc: 'Organization-level Spotlight Award and multiple client appreciations from LinkedIn and CSG.',
+    desc: 'Organization-level Spotlight Award and multiple client appreciations for enterprise delivery.',
   },
   {
     emoji: '💳',
@@ -283,11 +321,11 @@ export const awards = [
   {
     emoji: '⭐',
     company: 'Accenture Solutions',
-    desc: 'Star Award for Adobe / Blue Shield of California delivery.',
+    desc: 'Star Award for enterprise healthcare portal delivery.',
   },
   {
     emoji: '🏅',
     company: 'Mindtree Limited',
-    desc: '60+ peer and manager recognition awards across Kellogg\'s projects.',
+    desc: '60+ peer and manager recognition awards across enterprise projects.',
   },
 ]

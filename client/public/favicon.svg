@@ -1,0 +1,22 @@
+<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="52" height="52" rx="10" fill="#06060e"/>
+  <defs>
+    <linearGradient id="g1" x1="4" y1="2" x2="48" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="48" y1="2" x2="4" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer hexagon -->
+  <polygon points="26,2 48,14 48,38 26,50 4,38 4,14"
+    stroke="url(#g1)" stroke-width="2" fill="none" stroke-linejoin="round"/>
+  <!-- Inner hexagon -->
+  <polygon points="26,8 43,18 43,34 26,44 9,34 9,18"
+    stroke="url(#g2)" stroke-width="1" fill="none" stroke-linejoin="round"/>
+  <!-- RJ monogram — solid color for max favicon compat -->
+  <text x="26" y="31" text-anchor="middle"
+    font-family="monospace" font-size="14" font-weight="bold" fill="#818cf8">RJ</text>
+</svg>
