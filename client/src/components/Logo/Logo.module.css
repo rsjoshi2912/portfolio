@@ -1,0 +1,64 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  user-select: none;
+}
+
+.iconWrap {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hexOuter {
+  animation: rotateOuter 12s linear infinite;
+  transform-origin: 26px 26px;
+}
+
+.hexInner {
+  animation: rotateInner 8s linear infinite reverse;
+  transform-origin: 26px 26px;
+}
+
+@keyframes rotateOuter {
+  0%   { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -200; }
+}
+
+@keyframes rotateInner {
+  0%   { opacity: 0.4; }
+  50%  { opacity: 0.9; }
+  100% { opacity: 0.4; }
+}
+
+.text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.name {
+  color: var(--text);
+}
+
+.domain {
+  background: linear-gradient(135deg, var(--primary-light), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo:hover .hexOuter {
+  filter: drop-shadow(0 0 6px rgba(99, 102, 241, 0.7));
+}
