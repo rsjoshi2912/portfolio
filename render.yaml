@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: portfolio-server
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node index.js
+    plan: free
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: CLIENT_ORIGIN
+        value: https://rsjoshi2912.github.io

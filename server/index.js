@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const app = express()
 
 const allowedOrigins = [
-  'https://ravjoshi.github.io',
+  'https://rsjoshi2912.github.io',
   'http://localhost:5173',
   'http://localhost:4173',
 ]
