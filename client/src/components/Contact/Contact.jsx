@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { meta } from '../../data/portfolio'
+import { Arrow, Icon, Spark } from '../Icons'
 
 const API = import.meta.env.VITE_API_URL?.replace(/\/$/, '')
 const FORM_ENABLED =
@@ -55,7 +56,7 @@ export default function Contact() {
     <section id="contact" className="contact-section">
       <div className="wrap contact-inner">
         <div className="eyebrow">
-          <span className="status-dot" /> HAVE SOMETHING IN MIND?
+          <span className="status-dot" /> 06 / THE NEXT CHAPTER
         </div>
         <div className="contact-heading">
           <h2>
@@ -63,9 +64,7 @@ export default function Contact() {
             <br />
             with a <span className="serif">conversation.</span>
           </h2>
-          <span className="contact-flower" aria-hidden="true">
-            ✳
-          </span>
+          <Spark className="contact-flower" />
         </div>
         <p className="contact-description">
           A project, an opportunity, or a shared curiosity.
@@ -74,7 +73,7 @@ export default function Contact() {
         </p>
         <div className="contact-actions">
           <a className="button button-lime" href={`mailto:${meta.email}`}>
-            Say hello <span aria-hidden="true">↗</span>
+            Say hello <Arrow diagonal />
           </a>
           <a
             className="contact-social"
@@ -82,7 +81,7 @@ export default function Contact() {
             target="_blank"
             rel="noreferrer"
           >
-            Find me on LinkedIn <span aria-hidden="true">↗</span>
+            Find me on LinkedIn <Arrow diagonal />
           </a>
           <a
             className="contact-social"
@@ -90,7 +89,7 @@ export default function Contact() {
             target="_blank"
             rel="noreferrer"
           >
-            GitHub <span aria-hidden="true">↗</span>
+            GitHub <Arrow diagonal />
           </a>
         </div>
         <div className="contact-bottom">
@@ -124,7 +123,7 @@ export default function Contact() {
               onClick={() => setShowForm(!showForm)}
             >
               {showForm ? 'Close the note' : 'Or leave a little note'}{' '}
-              <span aria-hidden="true">{showForm ? '−' : '+'}</span>
+              <Icon name={showForm ? 'minus' : 'plus'} />
             </button>
           )}
         </div>
@@ -182,9 +181,8 @@ export default function Contact() {
                 type="submit"
                 disabled={status === 'sending'}
               >
-                {status === 'sending'
-                  ? 'Sending your note…'
-                  : 'Send your note ↗'}
+                {status === 'sending' ? 'Sending your note…' : 'Send your note'}
+                {status !== 'sending' && <Arrow diagonal />}
               </button>
             </form>
           </div>

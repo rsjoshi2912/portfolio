@@ -7,35 +7,15 @@ import {
   skills,
 } from './data/portfolio'
 import Contact from './components/Contact/Contact'
+import { Arrow, Icon, Spark } from './components/Icons'
+import JourneyGuide, { useGentleReveal } from './components/JourneyGuide'
 
 const asset = (name) => `${import.meta.env.BASE_URL}assets/${name}`
 const links = [
+  ['about', 'The story'],
   ['work', 'Selected work'],
-  ['about', 'A little about me'],
   ['experience', 'The journey'],
 ]
-
-function Arrow({ diagonal = false }) {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      {diagonal ? (
-        <path d="M6 18 18 6M6 6h12v12" />
-      ) : (
-        <path d="M4 12h16m-6-6 6 6-6 6" />
-      )}
-    </svg>
-  )
-}
 
 function Navigation() {
   const [open, setOpen] = useState(false)
@@ -75,7 +55,7 @@ function Navigation() {
         onClick={() => setOpen(!open)}
       >
         {open ? 'Close' : 'Menu'}
-        <span aria-hidden="true">{open ? '−' : '+'}</span>
+        <Icon name={open ? 'close' : 'plus'} />
       </button>
       <nav
         id="main-nav"
@@ -115,12 +95,10 @@ function Hero() {
     <section id="home" className="hero wrap">
       <div className="hero-copy">
         <div className="eyebrow">
-          <span className="status-dot" /> A BUILDER AT HEART. AN ENGINEER BY
-          CRAFT.
+          <span className="status-dot" /> ENGINEERING WITH A HUMAN TOUCH
         </div>
         <h1>
-          Thoughtful code.
-          <br />
+          <span className="headline-line">Thoughtful code.</span>
           <span className="serif">Real-world</span>
           <br />
           <span className="hero-impact">
@@ -134,20 +112,13 @@ function Hero() {
               />
             </svg>
           </span>
-          <span className="hero-asterisk" aria-hidden="true">
-            ✳
-          </span>
+          <Spark className="hero-asterisk" />
         </h1>
-        <p className="hero-intro">
-          Hey, I’m Ravi.{' '}
-          <span className="wave" aria-hidden="true">
-            ✌
-          </span>
-        </p>
+        <p className="hero-intro">Hey, I’m Ravi.</p>
         <p className="hero-description">
-          I turn complicated problems into things that just work. A full-stack
-          engineer with a soft spot for thoughtful experiences, good
-          architecture, and the details in between.
+          A full-stack engineer who turns complicated problems into things that
+          just work. Thoughtful experiences, useful platforms, and care in the
+          details.
         </p>
         <div className="hero-actions">
           <a className="button button-dark" href="#work">
@@ -158,7 +129,7 @@ function Hero() {
             href={asset('resume.pdf')}
             download="Ravi_Joshi_Resume.pdf"
           >
-            Grab my résumé <span aria-hidden="true">↓</span>
+            Grab my résumé <Arrow direction="down" />
           </a>
         </div>
         <div className="hero-location">
@@ -204,14 +175,17 @@ function Hero() {
           <figcaption>
             <span className="handwritten">Ravi Joshi</span>
             <span className="portrait-caption">
-              A LITTLE CURIOSITY GOES A LONG WAY.
+              Engineer. Builder. Always curious.
+            </span>
+            <span className="portrait-mobile-detail">
+              Adobe Certified Expert
+              <br />
+              Based in Bengaluru, India
             </span>
           </figcaption>
         </figure>
         <div className="adobe-sticker">
-          <span className="sticker-star" aria-hidden="true">
-            ✦
-          </span>
+          <Spark className="sticker-star" />
           <strong>3× Adobe</strong>
           <span>CERTIFIED</span>
         </div>
@@ -220,14 +194,12 @@ function Hero() {
             <span className="status-dot" /> Open to good conversations
           </div>
         )}
-        <span className="portrait-plus" aria-hidden="true">
-          +
-        </span>
+        <Icon name="plus" className="portrait-plus" />
       </div>
       <div className="hero-bottom">
         <span>GOOD PEOPLE. INTERESTING PROBLEMS. MEANINGFUL WORK.</span>
-        <a href="#work" aria-label="Scroll to selected work">
-          A few things I’ve built <span aria-hidden="true">↓</span>
+        <a href="#about" aria-label="Start the story">
+          A little of the story <Arrow direction="down" />
         </a>
       </div>
     </section>
@@ -235,24 +207,29 @@ function Hero() {
 }
 
 function Companies() {
+  const stops = [
+    ['2019', 'Mindtree'],
+    ['2021', 'Accenture'],
+    ['2023', 'Visa'],
+    ['2024 — NOW', 'Hashout'],
+  ]
   return (
     <div className="companies">
-      <div className="wrap company-row">
+      <div className="wrap career-stops">
         <p>
-          A little of my journey,
+          A journey built
           <br />
           <strong>in good company.</strong>
         </p>
-        <span className="company-hashout">
-          hashout<span>↗</span>
-        </span>
-        <span className="company-visa">VISA</span>
-        <span className="company-accenture">
-          accenture<span>›</span>
-        </span>
-        <span className="company-mindtree">
-          mindtree<span>✳</span>
-        </span>
+        <ol>
+          {stops.map(([year, name]) => (
+            <li key={name}>
+              <span className="career-year">{year}</span>
+              <strong>{name}</strong>
+              <span className="career-stop-dot" aria-hidden="true" />
+            </li>
+          ))}
+        </ol>
       </div>
     </div>
   )
@@ -321,7 +298,7 @@ function ProjectArtwork({ type }) {
           <div className="window-top">
             <span className="window-dots">● ● ●</span>
             <span>the publishing room</span>
-            <span>↗</span>
+            <Arrow diagonal />
           </div>
           <div className="publishing-body">
             <div className="mini-sidebar">
@@ -342,17 +319,17 @@ function ProjectArtwork({ type }) {
               </div>
               <div className="workflow">
                 <span>Write</span>
-                <b>→</b>
+                <Arrow />
                 <span>Translate</span>
-                <b>→</b>
+                <Arrow />
                 <span>
-                  Publish <b>✓</b>
+                  Publish <Icon name="check" />
                 </span>
               </div>
             </div>
           </div>
         </div>
-        <div className="art-note handwritten">a little less complexity ↗</div>
+        <div className="art-note handwritten">a little less complexity</div>
       </div>
     )
   if (type === 'platform')
@@ -361,7 +338,7 @@ function ProjectArtwork({ type }) {
         <div className="art-grid" />
         <div className="connection-diagram">
           <div className="diagram-node node-top">
-            CRM <span>↗</span>
+            CRM <Arrow diagonal />
           </div>
           <div className="diagram-line line-top" />
           <div className="diagram-node node-left">Search</div>
@@ -373,7 +350,7 @@ function ProjectArtwork({ type }) {
           <div className="diagram-node node-right">Identity</div>
           <div className="diagram-line line-bottom" />
           <div className="diagram-node node-bottom">
-            20+ APIs <span>↗</span>
+            20+ APIs <Arrow diagonal />
           </div>
         </div>
         <span className="art-bottom-label">
@@ -397,18 +374,22 @@ function ProjectArtwork({ type }) {
             starts here.
           </strong>
           <div className="intranet-search">
-            ⌕ <span>Find what you need</span>
-            <span>↵</span>
+            <Icon name="search" />
+            <span>Find what you need</span>
+            <Arrow />
           </div>
           <div className="intranet-tiles">
             <div>
-              <span>☀</span>My day
+              <Icon name="sun" />
+              My day
             </div>
             <div>
-              <span>▤</span>My team
+              <Icon name="document" />
+              My team
             </div>
             <div>
-              <span>↗</span>My tools
+              <Arrow diagonal />
+              My tools
             </div>
           </div>
         </div>
@@ -446,7 +427,7 @@ function ProjectDialog({ project, close }) {
           aria-label="Close project details"
           autoFocus
         >
-          ×
+          <Icon name="close" />
         </button>
         <span className="eyebrow">SELECTED WORK / {project.number}</span>
         <h2 id="project-title">{project.label}</h2>
@@ -476,11 +457,20 @@ function ProjectDialog({ project, close }) {
 
 function Work() {
   const [selected, setSelected] = useState(null)
+  const opener = useRef(null)
+  const openProject = (project, event) => {
+    opener.current = event.currentTarget
+    setSelected(project)
+  }
+  const closeProject = () => {
+    setSelected(null)
+    requestAnimationFrame(() => opener.current?.focus({ preventScroll: true }))
+  }
   return (
     <section className="work-section wrap section-space" id="work">
       <div className="section-heading">
         <div>
-          <div className="eyebrow">01 / SELECTED WORK</div>
+          <div className="eyebrow">03 / THINGS I’VE HELPED BUILD</div>
           <h2>
             Good problems.
             <br />
@@ -498,7 +488,7 @@ function Work() {
           <article className="project-card" key={project.id}>
             <button
               className="project-art-button"
-              onClick={() => setSelected(project)}
+              onClick={(event) => openProject(project, event)}
               aria-label={`Explore ${project.label}`}
             >
               <ProjectArtwork type={project.id} />
@@ -506,33 +496,33 @@ function Work() {
                 <Arrow diagonal />
               </span>
             </button>
-            <div className="project-meta">
-              <span>{project.category}</span>
-              <span>/{project.number}</span>
-            </div>
-            <h3>
-              <button onClick={() => setSelected(project)}>
-                {project.title}
+            <div className="project-copy">
+              <div className="project-meta">
+                <span>{project.category}</span>
+                <span>/{project.number}</span>
+              </div>
+              <h3>
+                <button onClick={(event) => openProject(project, event)}>
+                  {project.title}
+                </button>
+              </h3>
+              <p>{project.description}</p>
+              <div className="tags">
+                {project.tags.map((tag) => (
+                  <span key={tag}>{tag}</span>
+                ))}
+              </div>
+              <button
+                className="text-link project-detail-link"
+                onClick={(event) => openProject(project, event)}
+              >
+                Explore the story <Arrow diagonal />
               </button>
-            </h3>
-            <p>{project.description}</p>
-            <div className="tags">
-              {project.tags.map((tag) => (
-                <span key={tag}>{tag}</span>
-              ))}
             </div>
-            <button
-              className="text-link project-detail-link"
-              onClick={() => setSelected(project)}
-            >
-              The thinking behind it <Arrow diagonal />
-            </button>
           </article>
         ))}
       </div>
-      {selected && (
-        <ProjectDialog project={selected} close={() => setSelected(null)} />
-      )}
+      {selected && <ProjectDialog project={selected} close={closeProject} />}
     </section>
   )
 }
@@ -542,19 +532,33 @@ function About() {
     <section id="about" className="about-section">
       <div className="wrap about-grid">
         <div className="about-heading">
-          <div className="eyebrow">02 / THE PERSON BEHIND THE PIXELS</div>
+          <div className="eyebrow">02 / A LITTLE CONTEXT</div>
           <h2>
             Serious about the craft.
             <br />
             <span className="serif">Human about the rest.</span>
           </h2>
-          <div className="about-doodle" aria-hidden="true">
-            <span>✳</span>
-            <p className="handwritten">
-              Always a work
-              <br />
-              in progress.
-            </p>
+          <div
+            className="thinking-path"
+            aria-label="My approach: understand, build, keep improving"
+          >
+            <svg viewBox="0 0 380 120" fill="none" aria-hidden="true">
+              <path
+                d="M18 60C70 5 115 112 184 56S303 12 359 61"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeDasharray="3 5"
+              />
+              <circle cx="20" cy="58" r="5" />
+              <circle cx="188" cy="52" r="5" />
+              <circle cx="359" cy="61" r="5" />
+            </svg>
+            <div>
+              <span>Understand.</span>
+              <span>Build.</span>
+              <span>Keep improving.</span>
+            </div>
+            <p className="handwritten">The process is part of the craft.</p>
           </div>
         </div>
         <div className="about-copy">
@@ -573,7 +577,7 @@ function About() {
             team can be proud of.
           </p>
           <p>
-            These days, I’m a Senior Full-Stack Developer at{' '}
+            These days, I’m a Senior Software Engineer at{' '}
             <strong>Hashout Technologies</strong>, working on content platforms
             and the services that bring them together.
           </p>
@@ -635,7 +639,7 @@ function Toolkit() {
     <section className="toolkit-section wrap section-space" id="skills">
       <div className="section-heading">
         <div>
-          <div className="eyebrow">03 / MY TOOLKIT</div>
+          <div className="eyebrow">05 / TOOLS OF THE CRAFT</div>
           <h2>
             Different tools.
             <br />
@@ -663,7 +667,7 @@ function Toolkit() {
       </div>
       <details className="full-toolkit">
         <summary>
-          The full toolbox <span aria-hidden="true">+</span>
+          The full toolbox <Icon name="plus" />
         </summary>
         <div className="full-toolkit-grid">
           {skills.map((group) => (
@@ -705,7 +709,7 @@ function Journey() {
           href={asset('resume.pdf')}
           download="Ravi_Joshi_Resume.pdf"
         >
-          The full story, on paper <span aria-hidden="true">↓</span>
+          The full story, on paper <Arrow direction="down" />
         </a>
       </div>
       <div className="timeline">
@@ -722,9 +726,7 @@ function Journey() {
                 <span className="timeline-role">{job.role}</span>
                 <span className="timeline-note">{roleNotes[i]}</span>
               </span>
-              <span className="timeline-toggle" aria-hidden="true">
-                +
-              </span>
+              <Icon name="plus" className="timeline-toggle" />
             </summary>
             <div className="timeline-details">
               {job.projects.map((project) => (
@@ -779,7 +781,7 @@ function Credentials() {
       </div>
       <details className="other-credentials">
         <summary>
-          A few more milestones <span aria-hidden="true">+</span>
+          A few more milestones <Icon name="plus" />
         </summary>
         <div className="other-credentials-grid">
           {certifications.others.map((cert) => (
@@ -808,13 +810,14 @@ function Footer() {
         <span>© {new Date().getFullYear()} Ravi Joshi</span>
       </p>
       <a className="text-link" href="#home">
-        Back to the top <span aria-hidden="true">↑</span>
+        Back to the top <Arrow direction="up" />
       </a>
     </footer>
   )
 }
 
 export default function App() {
+  useGentleReveal()
   return (
     <>
       <a className="skip-link" href="#main">
@@ -824,14 +827,15 @@ export default function App() {
       <main id="main">
         <Hero />
         <Companies />
-        <Work />
         <About />
-        <Toolkit />
+        <Work />
         <Journey />
+        <Toolkit />
         <Credentials />
         <Contact />
       </main>
       <Footer />
+      <JourneyGuide />
     </>
   )
 }

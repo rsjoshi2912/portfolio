@@ -18,7 +18,10 @@ Open the `/portfolio/` path shown by Vite. Run `npm run build` for a production 
 
 - `client/src/App.jsx`: page sections, selected project summaries, navigation, and project dialogs.
 - `client/src/data/portfolio.js`: career history, skills, certifications, and contact details.
-- `client/src/index.css`: visual design and responsive layouts.
+- `client/src/index.css`: base visual design and project illustrations.
+- `client/src/journey.css`: responsive typography, mobile portrait, chapter navigation, and motion.
+- `client/src/components/Icons.jsx`: SVG icons that render consistently across platforms.
+- `client/src/components/JourneyGuide.jsx`: chapter navigation, reading progress, and reduced-motion-aware entrances.
 - `client/public/assets/`: portrait, résumé, and certification files.
 - `client/index.html`: page metadata and social previews.
 
@@ -43,4 +46,4 @@ This builds the site and publishes `dist/` to `gh-pages`, including a `.nojekyll
 
 ## Validation
 
-The redesign was checked in Chromium at widths from 320px to 1920px, with keyboard navigation, project dialog focus return, expandable sections, résumé downloads, and clipboard interactions. Contact form validation and failure/success states were verified with intercepted requests, without sending messages. Automated axe checks cover WCAG A/AA rules; these supplement manual visual and interaction checks.
+The design was checked in Chromium across 61 widths from 320px through 2540px and in WebKit with iPhone SE, 13 Mini, 13, 14 Pro Max, iPad Mini, and iPad Pro emulation in portrait and landscape. These are browser emulations, not physical-device tests. Checks cover chapter navigation, reduced motion, keyboard navigation, project dialog focus return, expandable sections, résumé downloads, and clipboard interactions. Contact form validation and failure/success states were verified with intercepted requests, without sending messages. Automated axe checks cover WCAG A/AA rules; these supplement manual visual and interaction checks.
